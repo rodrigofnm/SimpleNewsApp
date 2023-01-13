@@ -1,38 +1,422 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+.mainLogo {
+    width: 120px;
+    margin-right: 32px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+    justify-content: space-between;
+    display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header div {
+    margin: 0px 80px;
+    display: flex;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header div:first-child {
+    font-family: 'Lato', sans-serif;
+    font-size: 32px;
 }
 
-.App-link {
-  color: #61dafb;
+header div:first-child h1 {
+    margin-right: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.headerButton {
+    width: 180px;
+    font-size: 18px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.headerButton:hover {
+    font-size: 24px;
+    border-bottom: 1px solid red;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#firstHr {
+    height: 5px;
+    width: 94%;
+    margin-left: 0;
+    background: red;
+    margin-bottom: 10px;
+}
+
+#secondHr {
+    height: 2px;
+    width: 88%;
+    margin-right: 0;
+}
+
+#firstHr,
+hr {
+    border: none;
+    background: red;
+}
+
+/********************
+******  Slider ******
+********************/
+
+.sliderSection {
+    height: 400px;
+    min-width: 70%;
+    display: flex;
+    justify-content: center;
+    margin: 130px 0;
+}
+
+.slider {
+    position: relative;
+    height: 100%;
+    min-width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    padding: 0 80px;
+}
+
+.slider img {
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.prevBtn,
+.nextBtn {
+    background: none;
+    border: none;
+    position: absolute;
+    cursor: pointer;
+}
+
+.prevBtn {
+    left: -6px;
+}
+
+.nextBtn {
+    right: -6px;
+}
+
+#newsDestaque {
+    position: relative;
+    height: 80%;
+    width: 30%;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: 0.3s;
+}
+
+#newsDestaque div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    transition: 0.4s;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+#newsDestaque:hover div {
+    background-color: black;
+    opacity: 0.6;
+}
+
+#newsDestaque:hover {
+    box-shadow: 8px 8px 16px grey;
+    height: 84%;
+    transition: 0.4s;
+
+}
+
+#newsDestaque h2 {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    padding: 0 20px;
+    z-index: 3;
+    font-weight: 400;
+    top: 0;
+    left: 0;
+}
+
+#newsDestaque p {
+    position: relative;
+    color: white;
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+#newsDestaque aside {
+    height: 60px;
+    display: none;
+    margin: auto;
+    text-align: center;
+    z-index: 3;
+
+}
+
+#newsDestaque svg {
+    position: relative;
+    margin: auto;
+}
+
+#newsDestaque:hover aside,
+.linkCss {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.removeDisplay {
+    display: none;
+}
+
+/*******************************
+****** sections for types ******
+*******************************/
+
+.desportoSection {
+    width: 100%;
+    padding: 0 200px;
+}
+
+.desportoSection h2 {
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    width: 290px;
+    font-size: 40px;
+    margin: 0;
+}
+
+.sectionTitle {
+    position: relative;
+    align-items: center;
+    width: 90%;
+    display: flex;
+}
+
+.sectionTitle aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.sectionTitle aside div {
+    height: 16px;
+    width: 100%;
+}
+
+.sectionTitle hr {
+    position: relative;
+    left: 0;
+    color: red;
+    margin: 0 0 10px 0;
+}
+
+#hrTitleSection1 {
+    width: 45%;
+    height: 4px;
+}
+
+#hrTitleSection2 {
+    width: 28%;
+    height: 2px;
+}
+
+.cards {
+    display: flex;
+    height: 480px;
+    align-items: center;
+}
+
+.card {
+    height: 300px;
+    width: 310px;
+    padding: 18px;
+    border-radius: 16px;
+    background-color: #FAFaFA;
+    margin-right: 40px;
+    box-shadow: 2px 2px 8px grey;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 8px 8px 16px grey;
+
+}
+
+.card img {
+    height: 165px;
+    width: 200px;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.card h3 {
+    border-radius: 16px;
+    width: 260px;
+    font-family: 'Lato', sans-serif;
+    padding: 8px;
+    font-weight: 400;
+    font-size: large;
+    transition: 0.3s;
+}
+
+.card:hover img {
+    width: 202px;
+    height: 168px;
+    box-shadow: 8px 8px 16px grey;
+}
+
+/*******************************
+******* Description Page *******
+*******************************/
+
+#banner {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+.descPage {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    top: 0;
+}
+
+.descPage aside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.descPage h1 {
+    margin: 140px 0 100px 440px;
+    z-index: 1;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    width: 40%;
+    font-size: 60px;
+}
+
+.descPage div,
+.divBtn button {
+    z-index: 1;
+    color: white;
+}
+
+.visibleInfo {
+    z-index: 1;
+    top: 0;
+}
+
+.fullDescription {
+    width: 60%;
+    height: 0;
+    overflow: hidden;
+    padding-left: 360px;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    transition: 1.4s;
+}
+
+.descPage h3 {
+    margin: 100px 0 80px 360px;
+    width: 60%;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.divBtn {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.divBtn button {
+    width: 200px;
+    height: 50px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    font-family: 'Lato', sans-serif;
+    opacity: 0.6;
+    font-size: 18px;
+    transition: 0.4s;
+    margin-left: 600px;
+    left: 60px;
+}
+
+.divBtn button:hover {
+    right: 100px;
+    opacity: 0.9;
+    background-color: rgb(80, 80, 80);
+    box-shadow: 8px 8px 16px black;
+}
+
+.displayNone {
+    display: none;
+}
+
+.heightDesc {
+    height: 265px;
+}
+
+.goBackDiv {
+    display: flex;
+    margin-left: 40px;
+    height: 28px;
+    margin-top: 30px;
+    width: 80px;
+    font-size: 14px;
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.goBackDiv p {
+    margin: 0;
 }
